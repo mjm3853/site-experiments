@@ -1,0 +1,19 @@
+{
+  "name": "static-site-template",
+  "version": "1.0.0",
+  "description": "Template for an HTML, SASS, TS based static site",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjm3853/static-site-template.git"
+  },
+  "author": "Matt McGrath (https://github.com/mjm3853)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mjm3853/static-site-template/issues"
+  },
+  "homepage": "https://github.com/mjm3853/static-site-template#readme"
+}
