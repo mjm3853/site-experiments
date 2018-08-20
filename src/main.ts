@@ -1,0 +1,1 @@
+document.getElementById('typescript-check').innerHTML = "TypeScript Working";
