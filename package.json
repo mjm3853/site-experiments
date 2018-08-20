@@ -19,6 +19,7 @@
   "homepage": "https://github.com/mjm3853/static-site-template#readme",
   "dependencies": {},
   "devDependencies": {
+    "node-sass": "^4.9.3",
     "parcel-bundler": "^1.9.7"
   }
 }
