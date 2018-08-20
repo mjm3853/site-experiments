@@ -2,6 +2,13 @@
 
 Template for an HTML, SASS, and TypeScript based Static Site
 
+## Usage
+
+```bash
+npm install
+npm start
+```
+
 ## Guidelines
 
 - Keep things as simple as possible.
