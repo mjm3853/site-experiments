@@ -17,6 +17,9 @@
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
 
+/**
+ * Added a timestamp to the cache names to force cache busting after re-bundling.
+ */
 var now = Date.now();
 const PRECACHE = 'precache-' + now;
 const RUNTIME = 'runtime-' + now;
