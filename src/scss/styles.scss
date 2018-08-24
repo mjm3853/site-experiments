@@ -7,8 +7,73 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
+body {
+    margin: 0;
+}
+
 /* DELETE ME when creating a site */
 
 .scss-check {
     color: green;
+}
+
+/* CHANGE my prefix to match your site */
+
+.tmp-container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.tmp-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px;
+}
+
+.tmp-header--logo {
+    border: 1px solid;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.tmp-header--logo a {
+    text-decoration: none;
+}
+
+.tmp-header--name {
+    margin: 0;
+}
+
+.tmp-header--nav {
+    margin-left: auto;
+}
+
+.tmp-header--nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tmp-header--nav li {
+    display: inline;
+}
+
+.tmp-header--nav li:not(:last-child) {
+    margin-right: 10px;
+}
+
+.tmp-header--nav a {
+    flex: 1;
+    text-decoration: none;
+}
+
+.tmp-content {
+    margin: auto;
+    flex: 1;
+}
+
+.tmp-footer {
+    margin: auto;
+    padding-bottom: 20px;
 }

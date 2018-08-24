@@ -12,37 +12,36 @@
     <link rel="stylesheet" href="./scss/styles.scss">
 </head>
 
-<body>
-    <div>
-        <header>
-            <h1>Header</h1>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="./pages/sample-page.html">Sample Page</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+<body class="tmp-container">
+    <header class="tmp-header">
+        <div class="tmp-header--logo"><a href="/">LOGO</a></div>
+        <h1 class="tmp-header--name">Header</h1>
+        <nav class="tmp-header--nav">
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="./pages/sample-page.html">Sample Page</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-        <main>
-            <!-- DELETE ME when creating a site -->
-            <p id="typescript-check"></p>
+    <main class="tmp-content">
+        <!-- DELETE ME when creating a site -->
+        <p id="typescript-check"></p>
+        <!-- DELETE ME when creating a site  -->
+        <p class="scss-check">SCSS Working</p>
+    </main>
+
+    <footer class="tmp-footer">
+        <p>Footer</p>
+        <address>
             <!-- DELETE ME when creating a site  -->
-            <p class="scss-check">SCSS Working</p>
-        </main>
-
-        <footer>
-            <p>Footer</p>
-            <address>
-                <!-- DELETE ME when creating a site  -->
-                <a href="https://github.com/mjm3853/static-site-template" target="_blank">Static Site Template</a> by Matt McGrath
-            </address>
-        </footer>
-    </div>
+            <a href="https://github.com/mjm3853/static-site-template" target="_blank">Static Site Template</a> by Matt McGrath
+        </address>
+    </footer>
 
     <script src="./ts/main.ts"></script>
 </body>

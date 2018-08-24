@@ -1,0 +1,8 @@
+{
+  "plugins": {
+    "autoprefixer": {
+        "browsers": ["last 4 versions"],
+        "grid": true
+    }
+  }
+}
