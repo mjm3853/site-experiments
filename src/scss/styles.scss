@@ -57,15 +57,11 @@ body {
 
 .tmp-header--nav li {
     display: inline;
+    cursor: pointer;
 }
 
 .tmp-header--nav li:not(:last-child) {
     margin-right: 10px;
-}
-
-.tmp-header--nav a {
-    flex: 1;
-    text-decoration: none;
 }
 
 .tmp-content {
