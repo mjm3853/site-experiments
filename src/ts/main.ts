@@ -10,12 +10,12 @@ render(helloWorld, document.getElementById("tmp-content"));
 // Navigation Handlers
 document.getElementById("home-page").addEventListener("click", () => {
     render(helloWorld, document.getElementById("tmp-content"));
-    history.replaceState(null, "Home Page", "");
+    history.replaceState({ page: "Home Page" }, "Home Page", "/");
 });
 
 document.getElementById("sample-page").addEventListener("click", () => {
     render(samplePage, document.getElementById("tmp-content"));
-    history.replaceState(null, "Sample Page", "sample-page");
+    history.replaceState({ page: "Sample Page" }, "Sample Page", "/sample-page");
 });
 
 // DELETE ME when creating a site
