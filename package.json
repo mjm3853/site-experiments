@@ -6,8 +6,9 @@
   "scripts": {
     "lint": "tslint 'src/**/*.{ts,tsx}'",
     "test": "jest",
-    "start": "nodemon -w src -e html,ts,scss -i dist -x  \"parcel build ./src/index.html && cp serve.json ./dist && cd ./dist && serve\"",
-    "build": "parcel build ./src/index.html && cp serve.json ./dist"
+    "start": "nodemon -w src -e html,ts,scss -i dist --delay 5 -x  \"parcel build ./src/index.html && cp serve.json ./dist && cd ./dist && serve\"",
+    "build": "parcel build ./src/index.html && cp serve.json ./dist",
+    "cleanup": "rm -r ./dist && rm -r ./.cache"
   },
   "repository": {
     "type": "git",
