@@ -1,6 +1,6 @@
-# static-site-template
+# site-experiments
 
-Template for an HTML, SASS, and TypeScript based Static Site
+Experiments creating an HTML, SASS, and TypeScript based Site
 
 ## Develop
 
