@@ -1,9 +1,9 @@
-import { html, render } from "lit-html";
+import { render } from "lit-html";
 
-import { pageTemplate } from "./templates/page-template";
+import { pageTemplate } from "./models/page.model";
 
-import { homePage } from "./pages/home-page";
-import { samplePage } from "./pages/sample-page";
+import { homePage } from "./pages/home.page";
+import { samplePage } from "./pages/sample.page";
 
 const home = pageTemplate(homePage);
 const sample = pageTemplate(samplePage);
