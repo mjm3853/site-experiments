@@ -10,10 +10,12 @@ const sample = pageTemplate(samplePage);
 
 const contentMap = [
     {
+        contentName: "Home Page",
         content: home,
         path: "",
     },
     {
+        contentName: "Sample Page",
         content: sample,
         path: "sample-page",
     },
@@ -22,29 +24,40 @@ const contentMap = [
 // Navigation Handlers
 document.getElementById("home-page").addEventListener("click", () => {
     render(home, document.getElementById("tmp-content"));
-    history.replaceState({ page: "Home Page" }, "Home Page", "/");
-    window.dispatchEvent(new Event("popstate"));
+    history.pushState({ page: "Home Page" }, "Home Page", "/");
 });
 
 document.getElementById("sample-page").addEventListener("click", () => {
     render(sample, document.getElementById("tmp-content"));
-    history.replaceState({ page: "Sample Page" }, "Sample Page", "/sample-page");
-    window.dispatchEvent(new Event("popstate"));
+    history.pushState({ page: "Sample Page" }, "Sample Page", "/sample-page");
 });
 
+// Render content based on initial path
 window.onload = () => {
-    // Strip leading slash from pathname
-    const currentPage = location.pathname.replace(/^\/+/g, "");
+    const currentPage = location.pathname;
+    contentRender(currentPage);
+};
+
+// Render content based on back/forward button
+window.onpopstate = () => {
+    const lastPage = location.pathname;
+    contentRender(lastPage);
+};
+
+function contentRender(pathName): void {
+    const path = pathName.replace(/^\/+/g, "");
 
     for (const entry of contentMap) {
-        if (currentPage === entry.path) {
+        if (path === entry.path) {
             render(entry.content, document.getElementById("tmp-content"));
+            history.pushState({ page: entry.contentName }, entry.contentName, entry.path);
             break;
         } else {
             render(home, document.getElementById("tmp-content"));
+            history.pushState({ page: "Home Page" }, "Home Page", "/");
         }
     }
-};
+}
 
 // DELETE ME when creating a site
 export default function sum(a, b) {
