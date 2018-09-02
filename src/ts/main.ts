@@ -10,45 +10,48 @@ const sample = pageTemplate(samplePage);
 
 const contentMap = [
     {
-        contentName: "Home Page",
         content: home,
-        path: "",
+        contentName: "Home Page",
+        path: "/",
     },
     {
-        contentName: "Sample Page",
         content: sample,
-        path: "sample-page",
+        contentName: "Sample Page",
+        path: "/sample-page",
     },
 ];
 
 // Navigation Handlers
 document.getElementById("home-page").addEventListener("click", () => {
-    render(home, document.getElementById("tmp-content"));
-    history.pushState({ page: "Home Page" }, "Home Page", "/");
+    renderContent("/");
 });
 
 document.getElementById("sample-page").addEventListener("click", () => {
-    render(sample, document.getElementById("tmp-content"));
-    history.pushState({ page: "Sample Page" }, "Sample Page", "/sample-page");
+    renderContent("/sample-page");
 });
 
-// Render content based on initial path
 window.onload = () => {
-    const currentPage = location.pathname;
-    contentRender(currentPage);
+    renderContent();
 };
 
-// Render content based on back/forward button
 window.onpopstate = () => {
-    const lastPage = location.pathname;
-    contentRender(lastPage);
+    renderContent();
 };
 
-function contentRender(pathName): void {
-    const path = pathName.replace(/^\/+/g, "");
+/**
+ * Renders content that is associated with a path.
+ * If no path is provided as input, location.pathname will be used.
+ * If a path is provided, it must have a leading slash.
+ * If there is no content associated with the given path, default content will be used.
+ *
+ * @param {string} [path]
+ * @example renderContent("/sample-page")
+ */
+function renderContent(path?: string): void {
+    const renderPath = path ? path : location.pathname;
 
     for (const entry of contentMap) {
-        if (path === entry.path) {
+        if (renderPath === entry.path) {
             render(entry.content, document.getElementById("tmp-content"));
             history.pushState({ page: entry.contentName }, entry.contentName, entry.path);
             break;
