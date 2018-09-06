@@ -1,5 +1,8 @@
+import { TemplateResult } from "lit-html";
+
 import { pageTemplate } from "./models/page.model";
 
+import { anotherPage } from "./pages/another-page";
 import { homePage } from "./pages/home.page";
 import { samplePage } from "./pages/sample.page";
 
@@ -8,24 +11,32 @@ export const home = pageTemplate(homePage);
 
 // Add additional pages
 const sample = pageTemplate(samplePage);
+const another = pageTemplate(anotherPage);
 
-export const contentMap = [
+interface IContentItem {
+    content: TemplateResult;
+    contentName: string;
+    path: string;
+    navigationId: string;
+}
+
+export const contentMap: IContentItem[] = [
     {
         content: home,
         contentName: "Home Page",
         path: "/",
-        navigation: "home-page",
+        navigationId: "home-page",
     },
     {
         content: sample,
         contentName: "Sample Page",
         path: "/sample-page",
-        navigation: "sample-page",
+        navigationId: "sample-page",
     },
     {
-        content: sample,
+        content: another,
         contentName: "Another Page",
         path: "/another-page",
-        navigation: "another-page",
+        navigationId: "another-page",
     },
 ];

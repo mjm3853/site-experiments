@@ -5,12 +5,12 @@ import { contentMap, home } from "./content";
 // Navigation Handlers
 contentMap.forEach((contentItem) => {
     try {
-        document.getElementById(contentItem.navigation).addEventListener("click", () => {
+        document.getElementById(contentItem.navigationId).addEventListener("click", () => {
             renderContent(contentItem.path);
         });
     } catch (err) {
         // Likely indicates a content item exists with no navigation element
-        // Squashin the error for now
+        // Squashing the error for now
     }
 });
 
