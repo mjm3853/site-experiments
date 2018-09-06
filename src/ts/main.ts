@@ -1,35 +1,20 @@
 import { render } from "lit-html";
 
-import { pageTemplate } from "./models/page.model";
-
-import { homePage } from "./pages/home.page";
-import { samplePage } from "./pages/sample.page";
-
-const home = pageTemplate(homePage);
-const sample = pageTemplate(samplePage);
-
-const contentMap = [
-    {
-        content: home,
-        contentName: "Home Page",
-        path: "/",
-    },
-    {
-        content: sample,
-        contentName: "Sample Page",
-        path: "/sample-page",
-    },
-];
+import { contentMap, home } from "./content";
 
 // Navigation Handlers
-document.getElementById("home-page").addEventListener("click", () => {
-    renderContent("/");
+contentMap.forEach((contentItem) => {
+    try {
+        document.getElementById(contentItem.navigation).addEventListener("click", () => {
+            renderContent(contentItem.path);
+        });
+    } catch (err) {
+        // Likely indicates a content item exists with no navigation element
+        // Squashin the error for now
+    }
 });
 
-document.getElementById("sample-page").addEventListener("click", () => {
-    renderContent("/sample-page");
-});
-
+// Window Handlers
 window.onload = () => {
     renderContent();
 };
@@ -60,9 +45,4 @@ function renderContent(path?: string): void {
             history.pushState({ page: "Home Page" }, "Home Page", "/");
         }
     }
-}
-
-// DELETE ME when creating a site
-export default function sum(a, b) {
-    return a + b;
 }
