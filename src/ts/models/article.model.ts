@@ -8,8 +8,13 @@ export interface IArticleData {
 }
 
 export const articleTemplate = (articleData: IArticleData) => html`
+<style>
+    .tmp-article-header {
+        margin-top: 0;
+    }
+</style>
 <article>
-    <h3>${articleData.title}</h3>
+    <h3 class="tmp-article-header">${articleData.title}</h3>
     <p>
         <span>By: ${articleData.author}</span>
         &nbsp;|&nbsp;

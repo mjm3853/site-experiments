@@ -1,5 +1,12 @@
 import { html } from "lit-html";
+import { imageObjectTemplate } from "../models/imageObject.model";
 import { IPageData } from "../models/page.model";
+
+import { anotherArticle } from "../articles/another.article";
+import { articleTemplate } from "../models/article.model";
+
+// @ts-ignore
+import babyBear from "../../assets/baby-bear1.jpg";
 
 export const homePage: IPageData = {
     title: "Home Page!!!",
@@ -14,7 +21,7 @@ export const homePage: IPageData = {
         @keyframes slideUp {
             from {
                 opacity: 0;
-                margin-top: 20%;
+                margin-top: 30%;
             }
 
             to {
@@ -25,5 +32,9 @@ export const homePage: IPageData = {
     </style>
     <p class="tmp-animate">This is the home page</p>
     <p class="tmp-animate">I will be animated</p>
+    ${imageObjectTemplate({
+        imagePath: babyBear,
+        body: html`${articleTemplate(anotherArticle)}`,
+    })}
     `,
 };
