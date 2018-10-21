@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/mjm3853/site-experiments#readme",
   "dependencies": {
+    "@tensorflow/tfjs": "^0.13.2",
     "lit-html": "^0.10.2"
   },
   "devDependencies": {
