@@ -1,7 +1,7 @@
 {
-  "name": "static-site-template",
+  "name": "site-experiments",
   "version": "1.0.0",
-  "description": "Template for an HTML, SASS, TS based static site",
+  "description": "Experiments creating an HTML, SASS, and TypeScript based Sitee",
   "main": "index.js",
   "scripts": {
     "lint": "tslint 'src/**/*.{ts,tsx}'",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mjm3853/static-site-template.git"
+    "url": "git+https://github.com/mjm3853/site-experiments"
   },
   "author": "Matt McGrath (https://github.com/mjm3853)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mjm3853/static-site-template/issues"
+    "url": "https://github.com/mjm3853/site-experiments/issues"
   },
-  "homepage": "https://github.com/mjm3853/static-site-template#readme",
+  "homepage": "https://github.com/mjm3853/site-experiments#readme",
   "dependencies": {
     "lit-html": "^0.10.2"
   },
