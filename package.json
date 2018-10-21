@@ -30,7 +30,7 @@
     "node-sass": "^4.9.3",
     "nodemon": "^1.18.3",
     "parcel-bundler": "^1.9.7",
-    "serve": "^10.0.1",
+    "serve": "^10.0.2",
     "ts-jest": "^23.1.4",
     "tslint": "^5.11.0",
     "typescript": "^3.0.1"
